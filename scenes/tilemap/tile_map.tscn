@@ -1,0 +1,56 @@
+[gd_scene load_steps=12 format=3 uid="uid://btchwhcqxim01"]
+
+[ext_resource type="Texture2D" uid="uid://863kivjlh36c" path="res://assets/tiles/barn.png" id="1_g4dan"]
+[ext_resource type="Texture2D" uid="uid://bsh05l1cnfs5a" path="res://assets/tiles/blacksmiths.png" id="2_voew5"]
+[ext_resource type="Texture2D" uid="uid://b0d2qwle45rld" path="res://assets/tiles/mountains.png" id="3_tjrvr"]
+[ext_resource type="Texture2D" uid="uid://ckusvrju03pbn" path="res://assets/tiles/bg only.png" id="4_1ktj3"]
+[ext_resource type="Texture2D" uid="uid://owngqikktmvm" path="res://assets/tiles/grass.png" id="5_f7bo1"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gcyb3"]
+texture = ExtResource("1_g4dan")
+texture_region_size = Vector2i(434, 378)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ntycm"]
+texture = ExtResource("2_voew5")
+texture_region_size = Vector2i(434, 378)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g47ds"]
+texture = ExtResource("3_tjrvr")
+texture_region_size = Vector2i(434, 378)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o1wlk"]
+texture = ExtResource("4_1ktj3")
+margins = Vector2i(206, 260)
+texture_region_size = Vector2i(434, 378)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5ee3h"]
+texture = ExtResource("5_f7bo1")
+margins = Vector2i(206, 260)
+texture_region_size = Vector2i(434, 378)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_pjf2f"]
+tile_shape = 3
+tile_offset_axis = 1
+tile_size = Vector2i(434, 378)
+sources/2 = SubResource("TileSetAtlasSource_gcyb3")
+sources/3 = SubResource("TileSetAtlasSource_ntycm")
+sources/4 = SubResource("TileSetAtlasSource_g47ds")
+sources/5 = SubResource("TileSetAtlasSource_o1wlk")
+sources/6 = SubResource("TileSetAtlasSource_5ee3h")
+
+[node name="TileMap" type="TileMap"]
+tile_set = SubResource("TileSet_pjf2f")
+format = 2
+layer_0/tile_data = PackedInt32Array(65535, 5, 0, 1, 5, 0, 65538, 5, 0, 65539, 5, 0, 3, 5, 0, 65540, 5, 0, 65537, 5, 0, 131074, 5, 0, 131076, 5, 0, 65541, 5, 0, 5, 5, 0, 4, 5, 0, 2, 5, 0, 65536, 5, 0, 0, 5, 0, 131071, 5, 0, -65535, 5, 0, 131072, 5, 0, 131073, 5, 0, 131075, 5, 0, 131077, 5, 0, -65531, 5, 0, -65533, 5, 0, -1, 5, 0, 196607, 5, 0)
+layer_1/tile_data = PackedInt32Array(131073, 2, 0, 1, 3, 0, 131076, 3, 0, 65538, 5, 0, 65539, 5, 0, 131074, 5, 0, 196607, 6, 0, 131072, 6, 0, 131071, 6, 0, 65536, 6, 0, 65535, 6, 0, -1, 6, 0, 0, 6, 0, 65537, 6, 0, -65535, 6, 0, 2, 6, 0, 3, 6, 0, 65540, 6, 0, 5, 6, 0, 65541, 6, 0, 131077, 6, 0, 131075, 6, 0, -65533, 4, 0, 4, 4, 0, -65531, 4, 0)

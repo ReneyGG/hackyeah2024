@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bnk8a2hoiw6wk"]
+
+[node name="Map3d" type="Node3D"]
+
+[node name="GridMap" type="GridMap" parent="."]
