@@ -19,14 +19,14 @@ tracks/0/keys = {
 "values": [Vector2(2, 2), Vector2(3, 3), Vector2(2, 2)]
 }
 
-[sub_resource type="Animation" id="Animation_ns0pa"]
-resource_name = "population"
+[sub_resource type="Animation" id="Animation_0xof3"]
+resource_name = "points"
 length = 0.12
 step = 0.02
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Control/Population:scale")
+tracks/0/path = NodePath("Control/Points:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -36,14 +36,14 @@ tracks/0/keys = {
 "values": [Vector2(2, 2), Vector2(3, 3), Vector2(2, 2)]
 }
 
-[sub_resource type="Animation" id="Animation_0xof3"]
-resource_name = "points"
+[sub_resource type="Animation" id="Animation_ns0pa"]
+resource_name = "population"
 length = 0.12
 step = 0.02
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Control/Points:scale")
+tracks/0/path = NodePath("Control/Population:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {

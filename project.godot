@@ -18,6 +18,7 @@ config/icon="res://assets/icon.svg"
 
 Fade="*res://scenes/autoload/fade/fade.tscn"
 Pause="*res://scenes/Autoload/pause/pause.tscn"
+Rng="*res://scenes/rng/rng.tscn"
 
 [display]
 
