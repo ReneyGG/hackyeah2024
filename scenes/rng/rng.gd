@@ -2,10 +2,10 @@ extends Node
 
 var rarities = {
 	5 : 40, #plains
-	6 : 35, #grass
+	6 : 39, #grass
 	4 : 15, #mountains
-	2 : 5, #barn
-	3 : 5, #blacksmith
+	2 : 3, #barn
+	3 : 3, #blacksmith
 }
 
 var rng = RandomNumberGenerator.new()

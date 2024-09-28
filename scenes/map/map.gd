@@ -5,6 +5,7 @@ extends Node2D
 @onready var ui = $MainUI
 
 var target_player_pos
+var over_flag := false
 
 func _ready():
 	$GameOver.hide()
@@ -23,6 +24,8 @@ func _physics_process(_delta):
 	player.global_position.y = lerp(player.global_position.y, target_player_pos.y, 0.2)
 
 func _unhandled_input(event):
+	if over_flag:
+		return
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			var clicked_cell = tilemap.local_to_map(tilemap.make_input_local(event).position)
@@ -92,4 +95,10 @@ func move_tile(tile,pos):
 		ui.update_population()
 		await ui.get_node("AnimationPlayer").animation_finished
 	if ui.population <= 0:
-		$GameOver.show()
+		if not over_flag:
+			game_over()
+
+func game_over():
+	over_flag = true
+	await SilentWolf.Scores.save_score("Remur", ui.points).sw_save_score_complete
+	$GameOver.game_over()
