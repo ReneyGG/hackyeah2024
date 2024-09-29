@@ -1,5 +1,5 @@
 @tool
-extends Node2D
+extends Control
 
 const ScoreItem = preload("ScoreItem.tscn")
 const SWLogger = preload("res://addons/silent_wolf/utils/SWLogger.gd")
@@ -7,8 +7,12 @@ const SWLogger = preload("res://addons/silent_wolf/utils/SWLogger.gd")
 var list_index = 0
 # Replace the leaderboard name if you're not using the default leaderboard
 var ld_name = "main"
-var max_scores = 10
+var max_scores = 5
 
+func _ready():
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	initialize()
 
 func initialize():
 	print("SilentWolf.Scores.leaderboards: " + str(SilentWolf.Scores.leaderboards))
@@ -87,7 +91,7 @@ func score_in_score_array(scores: Array, new_score: Dictionary) -> bool:
 func add_item(player_name: String, score_value: String) -> void:
 	var item = ScoreItem.instantiate()
 	list_index += 1
-	item.get_node("PlayerName").text = str(list_index) + str(". ") + player_name
+	item.get_node("PlayerName").text = player_name
 	item.get_node("Score").text = score_value
 	item.offset_top = list_index * 100
 	$"Board/HighScores/ScoreItemContainer".add_child(item)
@@ -119,9 +123,20 @@ func clear_leaderboard() -> void:
 			score_item_container.remove_child(c)
 			c.queue_free()
 
-
 func _on_CloseButton_pressed() -> void:
 	var scene_name = SilentWolf.scores_config.open_scene_on_close
 	SWLogger.info("Closing SilentWolf leaderboard, switching to scene: " + str(scene_name))
 	#global.reset()
 	get_tree().change_scene_to_file(scene_name)
+
+func _on_deny_button_pressed():
+	Fade.fade("res://scenes/mainmenu/main_menu.tscn")
+	get_tree().paused = true
+
+func _on_confirm_button_pressed():
+	if $LineEdit.text != "":
+		$ConfirmButton.disabled = true
+		var sw_result: Dictionary = await SilentWolf.Scores.save_score($LineEdit.text, Global.points).sw_save_score_complete
+		initialize()
+		Fade.fade("res://scenes/mainmenu/main_menu.tscn")
+		get_tree().paused = true

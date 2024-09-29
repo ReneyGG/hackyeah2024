@@ -16,7 +16,7 @@ script = ExtResource("1_t3ale")
 [node name="TileMap" parent="." instance=ExtResource("1_xyvq8")]
 
 [node name="Player" parent="." instance=ExtResource("3_yvh6x")]
-position = Vector2(868, 552)
+position = Vector2(316, 171)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-6, -2)

@@ -9,7 +9,7 @@ var over_flag := false
 
 func _ready():
 	$GameOver.hide()
-	for x in range(-1,7):
+	for x in range(-2,8):
 		for y in range(-1,4):
 			var tile = Rng.get_rarity()
 			tilemap.set_cell(0,Vector2i(x,y),tile,Vector2i(0,0))
@@ -18,8 +18,8 @@ func _ready():
 	target_player_pos = player.global_position
 
 func _physics_process(_delta):
-	player.scale.x = lerp(player.scale.x, 2.0, 0.1)
-	player.scale.y = lerp(player.scale.y, 2.0, 0.1)
+	player.scale.x = lerp(player.scale.x, 1.0, 0.1)
+	player.scale.y = lerp(player.scale.y, 1.0, 0.1)
 	player.global_position.x = lerp(player.global_position.x, target_player_pos.x, 0.2)
 	player.global_position.y = lerp(player.global_position.y, target_player_pos.y, 0.2)
 
@@ -52,33 +52,31 @@ func generate(cell):
 			tilemap.set_cell(0,Vector2i(x+i,y+2),tile,Vector2i(0,0))
 	
 	for i in range(-2,3):
-		if not tilemap.get_cell_tile_data(0,Vector2i(x+3,y+i)):
+		if not tilemap.get_cell_tile_data(0,Vector2i(x+4,y+i)):
 			var tile = Rng.get_rarity()
-			tilemap.set_cell(0,Vector2i(x+3,y+i),tile,Vector2i(0,0))
+			tilemap.set_cell(0,Vector2i(x+4,y+i),tile,Vector2i(0,0))
 	
 	for i in range(-2,3):
-		if not tilemap.get_cell_tile_data(0,Vector2i(x+-3,y+i)):
+		if not tilemap.get_cell_tile_data(0,Vector2i(x+-4,y+i)):
 			var tile = Rng.get_rarity()
-			tilemap.set_cell(0,Vector2i(x-3,y+i),tile,Vector2i(0,0))
+			tilemap.set_cell(0,Vector2i(x-4,y+i),tile,Vector2i(0,0))
 
 func move_tile(tile,pos):
 	match tile:
-		2: #barn
-			ui.food += 3
-			#tilemap.erase_cell(1,pos)
-			tilemap.set_cell(0,pos,5,Vector2i(0,0))
-			ui.update_food()
-			await ui.get_node("AnimationPlayer").animation_finished
-		3: #blacksmith
-			ui.population += 1
-			ui.update_population()
-			await ui.get_node("AnimationPlayer").animation_finished
-		4: #mountain
+		0:
 			pass
-		5: #plain
+		1:
 			pass
-		6: #grass
-			pass
+		#2: #barn
+			#ui.food += 3
+			##tilemap.erase_cell(1,pos)
+			#tilemap.set_cell(0,pos,5,Vector2i(0,0))
+			#ui.update_food()
+			#await ui.get_node("AnimationPlayer").animation_finished
+		#3: #blacksmith
+			#ui.population += 1
+			#ui.update_population()
+			#await ui.get_node("AnimationPlayer").animation_finished
 	
 	ui.points += ui.population
 	ui.update_points()
@@ -100,5 +98,5 @@ func move_tile(tile,pos):
 
 func game_over():
 	over_flag = true
-	await SilentWolf.Scores.save_score("Remur", ui.points).sw_save_score_complete
+	Global.points = ui.points
 	$GameOver.game_over()

@@ -1,5 +1,6 @@
 extends Node
 
+var points
 
 func _ready():
 	SilentWolf.configure({
@@ -9,3 +10,5 @@ func _ready():
 	})
 	
 	#SilentWolf.Scores.wipe_leaderboard()
+	
+	points = 0
