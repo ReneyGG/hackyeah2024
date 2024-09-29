@@ -1,0 +1,140 @@
+[gd_scene load_steps=6 format=3 uid="uid://ol3p6whc4w8e"]
+
+[ext_resource type="Script" path="res://scenes/deck/deck.gd" id="1_6f7cy"]
+[ext_resource type="Texture2D" uid="uid://bx80v58g1ck6j" path="res://assets/juhumamydziecik.karta.png" id="1_tn3wt"]
+[ext_resource type="FontFile" uid="uid://deg2cl0jcjn6c" path="res://assets/PixelifySans-Medium.ttf" id="3_xfy0k"]
+[ext_resource type="Texture2D" uid="uid://wgq0odrf1vuo" path="res://assets/najedzonydebil.karta.png" id="4_rnymo"]
+[ext_resource type="Texture2D" uid="uid://7wejh0cyn6nf" path="res://assets/mniam.karta.png" id="5_hx3q2"]
+
+[node name="Deck" type="CanvasLayer"]
+script = ExtResource("1_6f7cy")
+
+[node name="Control" type="Control" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.635294)
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tn3wt")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -199.0
+offset_top = -134.5
+offset_right = -18.0
+offset_bottom = 129.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_xfy0k")
+theme_override_font_sizes/font_size = 16
+text = "Lorem ipsum"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="SkipButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Choose" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect2" type="ColorRect" parent="Choose"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.635294)
+
+[node name="Label" type="Label" parent="Choose"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -68.0
+offset_top = 12.0
+offset_right = 68.0
+offset_bottom = 42.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_xfy0k")
+theme_override_font_sizes/font_size = 24
+text = "Discard one"
+
+[node name="TextureButton" type="TextureButton" parent="Choose"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = -122.5
+offset_right = -15.0
+offset_bottom = 160.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_rnymo")
+
+[node name="TextureButton2" type="TextureButton" parent="Choose"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 19.0
+offset_top = -122.5
+offset_right = 209.0
+offset_bottom = 160.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_hx3q2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[connection signal="pressed" from="Control/SkipButton" to="." method="_on_skip_button_pressed"]
+[connection signal="pressed" from="Choose/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Choose/TextureButton2" to="." method="_on_texture_button_2_pressed"]

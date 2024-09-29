@@ -1,7 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://btchwhcqxim01"]
+[gd_scene load_steps=20 format=3 uid="uid://btchwhcqxim01"]
 
 [ext_resource type="Texture2D" uid="uid://b74jyhmctyg77" path="res://assets/hex-tile-rec1.png" id="1_dejy7"]
 [ext_resource type="Texture2D" uid="uid://bj65qu8chuobc" path="res://assets/hex-tile-rec2.png" id="2_ltxeu"]
+[ext_resource type="Texture2D" uid="uid://d1lev0l4amqhr" path="res://assets/hex-tile-top.png" id="3_uapq7"]
+[ext_resource type="Texture2D" uid="uid://bngp1wh2yibtn" path="res://assets/IMG_2601.png" id="4_e476i"]
+[ext_resource type="Texture2D" uid="uid://dwykpy47xpqpx" path="res://assets/IMG_2602.png" id="5_048k3"]
+[ext_resource type="Texture2D" uid="uid://cs2v7ivt3onga" path="res://assets/IMG_2603.png" id="6_6l371"]
+[ext_resource type="Texture2D" uid="uid://c0prh47l00gvq" path="res://assets/IMG_2608.png" id="7_hacbv"]
+[ext_resource type="Texture2D" uid="uid://b7rj7tej5ajxq" path="res://assets/skałabezkafla.png" id="8_l7hje"]
+[ext_resource type="Texture2D" uid="uid://cjlre3naxt0sh" path="res://assets/IMG_2610.png" id="9_fkkx5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2knap"]
 texture = ExtResource("1_dejy7")
@@ -13,14 +20,60 @@ texture = ExtResource("2_ltxeu")
 texture_region_size = Vector2i(109, 95)
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uufp1"]
+texture = ExtResource("3_uapq7")
+texture_region_size = Vector2i(109, 95)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_42mji"]
+texture = ExtResource("4_e476i")
+texture_region_size = Vector2i(100, 107)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k8cro"]
+texture = ExtResource("5_048k3")
+texture_region_size = Vector2i(100, 107)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nuqmn"]
+texture = ExtResource("6_6l371")
+texture_region_size = Vector2i(100, 107)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sefoh"]
+texture = ExtResource("7_hacbv")
+texture_region_size = Vector2i(141, 125)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tova5"]
+texture = ExtResource("8_l7hje")
+margins = Vector2i(4, 38)
+texture_region_size = Vector2i(109, 95)
+0:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gcahf"]
+texture = ExtResource("9_fkkx5")
+texture_region_size = Vector2i(141, 125)
+0:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_g0spw"]
 tile_shape = 3
 tile_offset_axis = 1
-tile_size = Vector2i(109, 95)
+tile_size = Vector2i(115, 101)
 sources/0 = SubResource("TileSetAtlasSource_2knap")
 sources/1 = SubResource("TileSetAtlasSource_w3oup")
+sources/2 = SubResource("TileSetAtlasSource_uufp1")
+sources/3 = SubResource("TileSetAtlasSource_42mji")
+sources/4 = SubResource("TileSetAtlasSource_k8cro")
+sources/5 = SubResource("TileSetAtlasSource_nuqmn")
+sources/6 = SubResource("TileSetAtlasSource_sefoh")
+sources/7 = SubResource("TileSetAtlasSource_tova5")
+sources/8 = SubResource("TileSetAtlasSource_gcahf")
 
 [node name="TileMap" type="TileMap"]
+texture_filter = 1
 tile_set = SubResource("TileSet_g0spw")
 format = 2
 layer_0/tile_data = PackedInt32Array(65539, 1, 0, 3, 1, 0, -65533, 1, 0, 131075, 1, 0, 196611, 1, 0, 196610, 1, 0, 196609, 1, 0, 196608, 1, 0, 262143, 1, 0, 196612, 1, 0, 196613, 1, 0, 196614, 1, 0, 196615, 1, 0, 131079, 1, 0, 65543, 1, 0, 65542, 1, 0, 7, 1, 0, 6, 1, 0, -65529, 1, 0, -1, 1, 0, 65535, 1, 0, 131071, 1, 0, 196607, 1, 0, -65536, 1, 0, 0, 1, 0, -65535, 1, 0, -65534, 1, 0, -65532, 1, 0, -65531, 1, 0, -65530, 1, 0, 5, 1, 0, 4, 1, 0, 2, 1, 0, 1, 1, 0, 65536, 1, 0, 131072, 1, 0, 131073, 1, 0, 65537, 1, 0, 131074, 1, 0, 65538, 1, 0, 65540, 1, 0, 131076, 1, 0, 131077, 1, 0, 131078, 1, 0, 65541, 1, 0)
+layer_1/tile_data = PackedInt32Array(2, 3, 0, 3, 6, 0, 5, 7, 1, 65538, 4, 0, 65536, 5, 0)

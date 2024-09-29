@@ -1,8 +1,9 @@
 extends Node
 
 var rarities = {
-	0 : 50, #plains
-	1 : 50, #plains 2
+	0 : 30, #plains
+	1 : 30, #plains 2
+	2 : 30, #plains 3
 }
 
 var rng = RandomNumberGenerator.new()

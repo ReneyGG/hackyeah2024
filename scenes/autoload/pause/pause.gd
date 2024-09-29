@@ -7,12 +7,12 @@ var av := true
 func _ready():
 	$Control.hide()
 
-func _input(event):
-	if Input.is_action_just_pressed("pause") and not get_tree().current_scene.name == "MainMenu" and av:
-		if get_tree().paused:
-			unpause()
-		else:
-			pause()
+#func _input(event):
+	#if Input.is_action_just_pressed("pause") and not get_tree().current_scene.name == "MainMenu" and av:
+		#if get_tree().paused:
+			#unpause()
+		#else:
+			#pause()
 
 func pause():
 	b_flag = false

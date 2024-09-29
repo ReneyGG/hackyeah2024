@@ -1,0 +1,44 @@
+[gd_scene load_steps=11 format=3 uid="uid://xdgbrn78c3g1"]
+
+[ext_resource type="AudioStream" uid="uid://byfcddc4caf41" path="res://sfx/Nowy folder/Hover.mp3" id="1_au2ft"]
+[ext_resource type="AudioStream" uid="uid://dcg0xl14i8p4h" path="res://sfx/Nowy folder/Karta_cay_ekran.mp3" id="2_ln66w"]
+[ext_resource type="AudioStream" uid="uid://nqjk8tld6g37" path="res://sfx/Nowy folder/Klik_na_ikone_.mp3" id="3_iuqgp"]
+[ext_resource type="AudioStream" uid="uid://b1vais2716dim" path="res://sfx/Nowy folder/Main_menu_lemur.mp3" id="4_ki32e"]
+[ext_resource type="AudioStream" uid="uid://rcsjhmcnxed0" path="res://sfx/Nowy folder/Podnoszenie_przedmiotow.mp3" id="5_hidd6"]
+[ext_resource type="AudioStream" uid="uid://kr5iiwcu3juy" path="res://sfx/Nowy folder/Rozgrywka_lemur_soundtrack_.mp3" id="6_tlt21"]
+[ext_resource type="AudioStream" uid="uid://bxmiwto44jveb" path="res://sfx/Nowy folder/Skok.mp3" id="7_lobc4"]
+[ext_resource type="AudioStream" uid="uid://cwjo61ia8ows2" path="res://sfx/Nowy folder/Warning.mp3" id="8_3yyn8"]
+[ext_resource type="AudioStream" uid="uid://beyiqm0nwhc2p" path="res://sfx/Nowy folder/Wsuwanie_karty.mp3" id="9_ovtg4"]
+[ext_resource type="AudioStream" uid="uid://8x2cpr48qvd0" path="res://sfx/Nowy folder/Wysuwanie_karty.mp3" id="10_cu870"]
+
+[node name="Audio" type="Node"]
+
+[node name="Hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_au2ft")
+
+[node name="KartaFullscreen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ln66w")
+
+[node name="Icon" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_iuqgp")
+
+[node name="MainMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ki32e")
+
+[node name="Pickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_hidd6")
+
+[node name="Gameplay" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_tlt21")
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_lobc4")
+
+[node name="Warning" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_3yyn8")
+
+[node name="SlideCard" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_ovtg4")
+
+[node name="SoudeCard" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_cu870")

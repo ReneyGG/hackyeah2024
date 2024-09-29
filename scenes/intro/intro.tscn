@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://cv1e1rcvh5tn"]
+
+[ext_resource type="Script" path="res://scenes/intro/intro.gd" id="1_0a4qu"]
+[ext_resource type="Texture2D" uid="uid://b4rqc72u2cgjn" path="res://assets/wstep-part1.png" id="1_y6wnx"]
+[ext_resource type="Texture2D" uid="uid://cjad51i1qyjx3" path="res://assets/wstep-2.png" id="2_i17j2"]
+[ext_resource type="Texture2D" uid="uid://c3kqsewmcqb6h" path="res://assets/wstep-3.png" id="3_ie4xx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w7fi5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_y6wnx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_i17j2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ie4xx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Intro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0a4qu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(310, 174)
+sprite_frames = SubResource("SpriteFrames_w7fi5")
+frame = 2
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

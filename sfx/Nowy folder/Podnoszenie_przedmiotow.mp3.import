@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://rcsjhmcnxed0"
+path="res://.godot/imported/Podnoszenie_przedmiotow.mp3-5da94774674a1e7fba83e19d0f80c1c6.mp3str"
+
+[deps]
+
+source_file="res://sfx/Nowy folder/Podnoszenie_przedmiotow.mp3"
+dest_files=["res://.godot/imported/Podnoszenie_przedmiotow.mp3-5da94774674a1e7fba83e19d0f80c1c6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

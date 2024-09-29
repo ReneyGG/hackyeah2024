@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bj7x5ebumbmfl"]
+[gd_scene load_steps=7 format=3 uid="uid://bj7x5ebumbmfl"]
 
 [ext_resource type="Script" path="res://scenes/map/map.gd" id="1_t3ale"]
 [ext_resource type="PackedScene" uid="uid://btchwhcqxim01" path="res://scenes/tilemap/tile_map.tscn" id="1_xyvq8"]
 [ext_resource type="PackedScene" uid="uid://dg13ep5ldti5y" path="res://scenes/mainui/main_ui.tscn" id="2_6tw4j"]
 [ext_resource type="PackedScene" uid="uid://dhorbu8wmqs6r" path="res://scenes/gameover/game_over.tscn" id="3_lwq03"]
 [ext_resource type="PackedScene" uid="uid://5fampni1p15w" path="res://scenes/player/player.tscn" id="3_yvh6x"]
+[ext_resource type="PackedScene" uid="uid://ol3p6whc4w8e" path="res://scenes/deck/deck.tscn" id="4_61qrc"]
 
 [node name="Map" type="Node2D"]
 script = ExtResource("1_t3ale")
@@ -13,6 +14,8 @@ script = ExtResource("1_t3ale")
 
 [node name="GameOver" parent="." instance=ExtResource("3_lwq03")]
 
+[node name="Deck" parent="." instance=ExtResource("4_61qrc")]
+
 [node name="TileMap" parent="." instance=ExtResource("1_xyvq8")]
 
 [node name="Player" parent="." instance=ExtResource("3_yvh6x")]
@@ -20,5 +23,7 @@ position = Vector2(316, 171)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-6, -2)
+offset = Vector2(-80, 0)
+zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0

@@ -1,28 +1,33 @@
-[gd_scene load_steps=11 format=3 uid="uid://b2h8ok8yfc7wb"]
+[gd_scene load_steps=12 format=3 uid="uid://b2h8ok8yfc7wb"]
 
 [ext_resource type="Script" path="res://addons/silent_wolf/Scores/Leaderboard.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://deg2cl0jcjn6c" path="res://assets/PixelifySans-Medium.ttf" id="1_22qav"]
 [ext_resource type="Texture2D" uid="uid://tvlib5hc2mha" path="res://assets/tlo.png" id="2_h0pf4"]
 [ext_resource type="Theme" uid="uid://d2eakbmaefnt6" path="res://addons/silent_wolf/assets/themes/sw_theme.tres" id="2_ixaq4"]
-[ext_resource type="Texture2D" uid="uid://ccgu6tmnmy8sm" path="res://assets/leaderboard_no_buttons.png" id="3_ucpwc"]
+[ext_resource type="Texture2D" uid="uid://sygaosmu0cdx" path="res://assets/leaderboardNOWY.png" id="3_paqkx"]
 [ext_resource type="PackedScene" uid="uid://clllbf6am8qdf" path="res://addons/silent_wolf/common/SWButton.tscn" id="4"]
-[ext_resource type="Texture2D" uid="uid://b64e8u5myqdw5" path="res://assets/leaderboard_w_buttons.png" id="6_ar41m"]
-[ext_resource type="Texture2D" uid="uid://ncq74oght36d" path="res://assets/denay_leaderboard.png" id="7_lucs5"]
+[ext_resource type="Texture2D" uid="uid://biueujlr6n4gy" path="res://assets/deny_eaderboard.png" id="6_i6rdi"]
 [ext_resource type="Texture2D" uid="uid://7oykpvgmpk53" path="res://assets/confirm_leaderboard.png" id="8_1it68"]
 [ext_resource type="Texture2D" uid="uid://dcliyud5ltj21" path="res://assets/yourname_leaderboard.png" id="9_mn7su"]
+
+[sub_resource type="Theme" id="Theme_yf82j"]
 
 [sub_resource type="Theme" id="Theme_j1gah"]
 
 [node name="Leaderboard" type="Control"]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_yf82j")
 script = ExtResource("1")
 
 [node name="OldBoard" type="MarginContainer" parent="."]
 visible = false
+layout_mode = 0
 
 [node name="HighScores" type="TextureRect" parent="OldBoard"]
 layout_mode = 2
@@ -42,7 +47,7 @@ texture_filter = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("3_ucpwc")
+texture = ExtResource("3_paqkx")
 
 [node name="Board" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -50,16 +55,16 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 192.0
-offset_top = 118.0
+offset_top = 126.0
 offset_right = -207.0
-offset_bottom = -123.0
+offset_bottom = -117.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
 theme = ExtResource("2_ixaq4")
-theme_override_constants/separation = 48
+theme_override_constants/separation = 70
 
 [node name="TitleContainer" type="CenterContainer" parent="Board"]
 visible = false
@@ -98,54 +103,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Close Leaderboard"
 
-[node name="Template" type="TextureRect" parent="."]
-self_modulate = Color(1, 1, 1, 0.196078)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_ar41m")
-
-[node name="DenyButton" type="TextureButton" parent="."]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -65.0
-offset_top = 92.5
-offset_right = -13.0
-offset_bottom = 111.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("7_lucs5")
-ignore_texture_size = true
-stretch_mode = 3
-
-[node name="ConfirmButton" type="TextureButton" parent="."]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 19.0
-offset_top = 92.5
-offset_right = 74.0
-offset_bottom = 107.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("8_1it68")
-ignore_texture_size = true
-stretch_mode = 3
-
 [node name="Line" type="TextureRect" parent="."]
 texture_filter = 1
 layout_mode = 1
@@ -160,6 +117,7 @@ offset_right = 124.0
 offset_bottom = 99.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("9_mn7su")
 
 [node name="LineEdit" type="LineEdit" parent="."]
@@ -175,9 +133,46 @@ offset_right = 101.5
 offset_bottom = 86.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_22qav")
 placeholder_text = "Name"
 alignment = 1
+context_menu_enabled = false
+deselect_on_focus_loss_enabled = false
 flat = true
+
+[node name="DenyButton" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = 92.5
+offset_right = -21.0
+offset_bottom = 109.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("6_i6rdi")
+
+[node name="ConfirmButton" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 19.0
+offset_top = 92.5
+offset_right = 72.0
+offset_bottom = 109.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("8_1it68")
 
 [connection signal="pressed" from="Board/CloseButtonContainer/CloseButton" to="." method="_on_CloseButton_pressed"]
 [connection signal="pressed" from="DenyButton" to="." method="_on_deny_button_pressed"]

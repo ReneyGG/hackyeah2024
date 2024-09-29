@@ -137,6 +137,9 @@ func _on_confirm_button_pressed():
 	if $LineEdit.text != "":
 		$ConfirmButton.disabled = true
 		var sw_result: Dictionary = await SilentWolf.Scores.save_score($LineEdit.text, Global.points).sw_save_score_complete
-		initialize()
+		#initialize()
 		Fade.fade("res://scenes/mainmenu/main_menu.tscn")
 		get_tree().paused = true
+
+func _on_exit_button_pressed():
+	Fade.fade("res://scenes/mainmenu/main_menu.tscn")

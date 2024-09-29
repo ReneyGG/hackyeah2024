@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bxmiwto44jveb"
+path="res://.godot/imported/Skok.mp3-634245e06a3407f9fa6f98950e7dc8c4.mp3str"
+
+[deps]
+
+source_file="res://sfx/Nowy folder/Skok.mp3"
+dest_files=["res://.godot/imported/Skok.mp3-634245e06a3407f9fa6f98950e7dc8c4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
