@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bj7x5ebumbmfl"]
+[gd_scene load_steps=8 format=3 uid="uid://bj7x5ebumbmfl"]
 
 [ext_resource type="Script" path="res://scenes/map/map.gd" id="1_t3ale"]
 [ext_resource type="PackedScene" uid="uid://btchwhcqxim01" path="res://scenes/tilemap/tile_map.tscn" id="1_xyvq8"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dhorbu8wmqs6r" path="res://scenes/gameover/game_over.tscn" id="3_lwq03"]
 [ext_resource type="PackedScene" uid="uid://5fampni1p15w" path="res://scenes/player/player.tscn" id="3_yvh6x"]
 [ext_resource type="PackedScene" uid="uid://ol3p6whc4w8e" path="res://scenes/deck/deck.tscn" id="4_61qrc"]
+[ext_resource type="Texture2D" uid="uid://2nmmbmy6lmrm" path="res://assets/hex-light.png" id="7_heluy"]
 
 [node name="Map" type="Node2D"]
 script = ExtResource("1_t3ale")
@@ -27,3 +28,6 @@ offset = Vector2(-80, 0)
 zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0
+
+[node name="SelectLight" type="PointLight2D" parent="."]
+texture = ExtResource("7_heluy")

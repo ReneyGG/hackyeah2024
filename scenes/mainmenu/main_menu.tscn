@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://0bw4emwkxlnf"]
+[gd_scene load_steps=11 format=3 uid="uid://0bw4emwkxlnf"]
 
 [ext_resource type="Script" path="res://scenes/mainmenu/main_menu.gd" id="1_g7ly2"]
 [ext_resource type="Texture2D" uid="uid://tvlib5hc2mha" path="res://assets/tlo.png" id="2_l56vn"]
@@ -6,6 +6,26 @@
 [ext_resource type="Texture2D" uid="uid://dxalqtxjrvuu5" path="res://assets/play.png" id="4_7fbmy"]
 [ext_resource type="Texture2D" uid="uid://bhi4q3v8oxo4s" path="res://assets/anarh.png" id="5_81yu2"]
 [ext_resource type="Texture2D" uid="uid://bqbbe5e62s8xo" path="res://assets/tytul.png" id="6_5psqm"]
+[ext_resource type="Texture2D" uid="uid://lrmagxyibd3x" path="res://assets/zjeb1.png" id="7_cmshr"]
+[ext_resource type="Texture2D" uid="uid://by0ca5bidivry" path="res://assets/zjeb2.png" id="8_korh1"]
+[ext_resource type="Texture2D" uid="uid://cpdsig24nrjem" path="res://assets/zjeb3.png" id="9_snv48"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g8vxn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_cmshr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_korh1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_snv48")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -41,12 +61,19 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("4_7fbmy")
 
 [node name="Anarh" type="Sprite2D" parent="."]
-position = Vector2(443, 158)
+position = Vector2(417, 150)
 texture = ExtResource("5_81yu2")
 
 [node name="Tytul" type="Sprite2D" parent="."]
 position = Vector2(173, 64)
 texture = ExtResource("6_5psqm")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(310, 174)
+sprite_frames = SubResource("SpriteFrames_g8vxn")
+frame_progress = 0.367258
+
+[connection signal="mouse_entered" from="ExitButton" to="." method="_on_exit_button_mouse_entered"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="mouse_entered" from="PlayButton" to="." method="_on_play_button_mouse_entered"]
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

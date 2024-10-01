@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ol3p6whc4w8e"]
+[gd_scene load_steps=7 format=3 uid="uid://ol3p6whc4w8e"]
 
 [ext_resource type="Script" path="res://scenes/deck/deck.gd" id="1_6f7cy"]
 [ext_resource type="Texture2D" uid="uid://bx80v58g1ck6j" path="res://assets/juhumamydziecik.karta.png" id="1_tn3wt"]
 [ext_resource type="FontFile" uid="uid://deg2cl0jcjn6c" path="res://assets/PixelifySans-Medium.ttf" id="3_xfy0k"]
 [ext_resource type="Texture2D" uid="uid://wgq0odrf1vuo" path="res://assets/najedzonydebil.karta.png" id="4_rnymo"]
 [ext_resource type="Texture2D" uid="uid://7wejh0cyn6nf" path="res://assets/mniam.karta.png" id="5_hx3q2"]
+[ext_resource type="Script" path="res://scenes/deck/discard_button.gd" id="5_x41qq"]
 
 [node name="Deck" type="CanvasLayer"]
 script = ExtResource("1_6f7cy")
@@ -70,8 +71,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_default_cursor_shape = 2
 
 [node name="Choose" type="Control" parent="."]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -116,7 +119,11 @@ offset_right = -15.0
 offset_bottom = 160.5
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(95, 141)
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("4_rnymo")
+script = ExtResource("5_x41qq")
+side = -1
 
 [node name="TextureButton2" type="TextureButton" parent="Choose"]
 layout_mode = 1
@@ -131,10 +138,17 @@ offset_right = 209.0
 offset_bottom = 160.5
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(95, 141)
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("5_hx3q2")
+script = ExtResource("5_x41qq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [connection signal="pressed" from="Control/SkipButton" to="." method="_on_skip_button_pressed"]
+[connection signal="mouse_entered" from="Choose/TextureButton" to="Choose/TextureButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Choose/TextureButton" to="Choose/TextureButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="Choose/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="mouse_entered" from="Choose/TextureButton2" to="Choose/TextureButton2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Choose/TextureButton2" to="Choose/TextureButton2" method="_on_mouse_exited"]
 [connection signal="pressed" from="Choose/TextureButton2" to="." method="_on_texture_button_2_pressed"]
